@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css"> 
+<style>
+
+html, body {
+    background-image: url("/Users/theagasparyan/Desktop/hej.jpg");
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: -1px; 
+    line-height: 1;
+    height: 100%;
+    margin: 0;
+} 
+
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 400%;
+    font-weight: bold;
+    padding-top:0px;
+    padding-bottom:0px
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    font-size: 200%;
+}
+
+p {
+    color: black;
+    text-align: center; 
+    font-size: 125%;
+    
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+} 
+
+div {
+  height: 100%;
+}
+
+div.top-container {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
+
+div.inner-container {
+  background: red;
+  height: 100%;
+}
+</style>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head> 
+<body class="container">
+
+
+  <div class="nav">
+    <div class="top-container">
+      <h1>
+        Arctic melting
+      </h1>  
+
+      <h2>Arctic sea ice extent</h2>
+    </div>
+
+    <p>
+       The Arctic sea ice keeps the polar regions cool and helps moderate global climate. The effects of global warming in the Arctic includes rising temperatures, melting of the ice and ice loss.
+    </p>
+  </div> 
+
+
+  <script>
+new Chartist.Line('.ct-chart', {
+  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  series: [
+    [12, 9, 7, 8, 5],
+    [2, 1, 3.5, 7, 3],
+    [1, 3, 4, 5, 6]
+  ]
+}, {
+  fullWidth: true,
+  chartPadding: {
+    right: 40
+  }
+});
+  </script>
+
+</body>
+  
+</html>

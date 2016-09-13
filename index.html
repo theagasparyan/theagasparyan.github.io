@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="stylesheet.css"> 
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script> 
 <style>
 
 html, body {
-    background-image: url("hej.jpg");
+    background-image: url("/Users/theagasparyan/Desktop/hej.jpg");
     font-family: 'Helvetica Neue', sans-serif;
     letter-spacing: -1px; 
     line-height: 1;
@@ -40,7 +42,7 @@ p {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-} 
+
 
 div {
   height: 100%;
@@ -51,6 +53,7 @@ div.top-container {
   top: 100px;
   left: 0;
   right: 0;
+  background: red;
 }
 
 div.inner-container {
@@ -59,7 +62,7 @@ div.inner-container {
 }
 </style>
   <meta charset="utf-8"/>
-  <link rel="stylesheet" type="text/css" href="main.css">
+ <!--<link rel="stylesheet" type="text/css" href="main.css">-->
 </head> 
 <body class="container">
 
@@ -68,35 +71,45 @@ div.inner-container {
     <div class="top-container">
       <h1>
         Arctic melting
-      </h1>  
+      </h1> 
 
-      <h2>Arctic sea ice extent</h2>
+
+      <br>
+      <br> 
+      <br>
+      <br>
+      <br> 
+      <br>
+
+      <br>
+      <br> 
+      <br>
+
+     
     </div>
+
+      
 
     <p>
        The Arctic sea ice keeps the polar regions cool and helps moderate global climate. The effects of global warming in the Arctic includes rising temperatures, melting of the ice and ice loss.
-    </p>
-  </div> 
-  
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84063531-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    </p></div> 
 
 
-  <script>
-new Chartist.Line('.ct-chart', {
-  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      <br>
+      <br> 
+      <br>
+      <br>
+     
+    
+     
+
+  <div class="ct-chart"></div>
+    <script>
+    new Chartist.Line('.ct-chart', {
+  labels: ['2002', '2003', '2004', '2005', '2006', '2007', '2008','2009', '2010', '2011', '2012', '2013', '2014', '2015'],
   series: [
-    [12, 9, 7, 8, 5],
-    [2, 1, 3.5, 7, 3],
-    [1, 3, 4, 5, 6]
+    [5.95, 6.13, 6.04, 5.56, 5.91, 4.29, 4.72, 5.38, 4.92, 4.61, 3.62, 5.35, 5.28, 4.63],
+    
   ]
 }, {
   fullWidth: true,
@@ -104,7 +117,9 @@ new Chartist.Line('.ct-chart', {
     right: 40
   }
 });
-  </script>
+
+
+</script>
 
 </body>
   

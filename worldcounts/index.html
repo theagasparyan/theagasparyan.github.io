@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<style>
 
+
+
+html, body {
+    background-image: url earthy.jpg;
+    background-size: cover;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+    letter-spacing: -1px; 
+    line-height: 1;
+    height: 100%;
+
+   
+}  
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 450%;
+    font-weight: bold;
+    padding-top:0px;
+    padding-bottom:0px
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 250%;
+}
+
+h3 {
+    color: white;
+    text-align: center; 
+    font-size: 250%;
+    
+    
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+
+</style>
+
+<body>
+
+<div>
+      <h1>
+        
+        The world counts
+        
+    
+      </h1>
+
+      <h2> Carbon emission this year in tons </h2>
+
+      <h3 class="page-content">
+      
+    </h3>
+
+    <script type="text/javascript">
+    var countcarbon= 0;
+
+    (function carbon(){
+      var d=new Date(2016,0,1,0,0,0,0);
+     var currdate=new Date();
+    
+    countcarbon = (currdate-d)*761/1000; 
+    $(".page-content").html(countcarbon); 
+
+    
+    setTimeout(arguments.callee, 1000);
+})(); 
+
+  </script>
+
+   <h2> Tons of resources extracted from Earth </h2>
+
+  <h3 class="page-content2">
+      
+    </h3>
+
+    <script type="text/javascript">
+    var countresources = 0;
+
+    (function resources(){
+     var d=new Date(2016,0,1,0,0,0,0);
+     var currdate=new Date();
+
+    countresources = (currdate-d)*1744/1000; 
+    $(".page-content2").html(countresources); 
+
+    
+    setTimeout(arguments.callee, 1000);
+})(); 
+
+  </script>
+
+  <h2> Tons of waste dumped </h2>
+
+<h3 class="page-content3">
+      
+    </h3>
+
+    <script type="text/javascript">
+    var countdump = 0;
+
+    (function dump(){
+    var d=new Date(2016,0,1,0,0,0,0);
+     var currdate=new Date();
+    
+    countdump = (currdate-d)*6722/1000; 
+    $(".page-content3").html(countdump); 
+
+    
+    setTimeout(arguments.callee, 1000);
+})(); 
+
+  </script>
+
+
+      </div>
+
+
+</body>
+  
+</html>

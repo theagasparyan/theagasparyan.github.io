@@ -93,7 +93,7 @@ h3 {
      var currdate=new Date();
 
     countresources = (currdate-d)*1744/1000; 
-    $(".page-content2").html(countresources); 
+    $(".page-content2").html(Math.round(countresources)); 
 
     
     setTimeout(arguments.callee, 1000);
@@ -115,7 +115,7 @@ h3 {
      var currdate=new Date();
     
     countdump = (currdate-d)*6722/1000; 
-    $(".page-content3").html(countdump); 
+    $(".page-content3").html(Math.round(countdump)); 
 
     
     setTimeout(arguments.callee, 1000);

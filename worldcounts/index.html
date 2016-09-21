@@ -71,7 +71,7 @@ h3 {
      var currdate=new Date();
     
     countcarbon = (currdate-d)*761/1000; 
-    $(".page-content").html(countcarbon); 
+    $(".page-content").html(Math.round(countcarbon)); 
 
     
     setTimeout(arguments.callee, 1000);

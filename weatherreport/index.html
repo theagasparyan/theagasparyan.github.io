@@ -133,7 +133,7 @@
     
     <script>
 
-    var Floridablanca;
+    var Melbourne;
     var Victoria;
     var Theale;
     var Magyarbanhegyes;
@@ -145,7 +145,7 @@
 
       $(".js-get").click(function(){
 
-         var postURL = "https://api.openweathermap.org/data/2.5/group?id=3682385,1733782,2636045,717943,735661,3184388,2058430&units=metric&appid=0bb000ca0541a89efdbdb2a8856fb1ea";
+         var postURL = "http://api.openweathermap.org/data/2.5/group?id=3682385,1733782,2636045,717943,735661,3184388,2058430&units=metric&appid=0bb000ca0541a89efdbdb2a8856fb1ea";
 
          $.get(postURL, function(data) {
           console.log(data);
@@ -157,7 +157,7 @@
           console.log(data.list[5].main.temp);
           console.log(data.list[6].main.temp);
 
-          Floridablanca = data.list[0].main.temp + ", " + data.list[0].weather[0].description;
+          Melbourne = data.list[0].main.temp + ", " + data.list[0].weather[0].description;
           Victoria = data.list[1].main.temp + ", " + data.list[1].weather[0].description;
           Theale = data.list[2].main.temp + ", " + data.list[2].weather[0].description;
           Magyarbanhegyes = data.list[3].main.temp + ", " + data.list[3].weather[0].description;
@@ -165,7 +165,7 @@
           Puke = data.list[5].main.temp + ", " + data.list[5].weather[0].description;
           Whyalla = data.list[6].main.temp + ", " + data.list[6].weather[0].description;
 
-            $(".Floridablanca").html(Floridablanca);
+            $(".Melbourne").html(Melbourne);
             $(".Victoria").html(Victoria);
             $(".Theale").html(Theale);
             $(".Magyarbanhegyes").html(Magyarbanhegyes);
@@ -209,9 +209,9 @@ var map = AmCharts.makeChart( "chartdiv", {
     "images": [ {
       "zoomLevel": 5,
       "scale": 0.5,
-      "title": "Floridablanca " + Floridablanca,
-      "latitude": 7.072392,
-      "longitude": -73.106969
+      "title": "Melbourne " + Melbourne,
+      "latitude": 37.8136
+      "longitude": 144.9631
     }, {
       "zoomLevel": 5,
       "scale": 0.5,
@@ -313,18 +313,8 @@ function createCustomMarker( image ) {
 
 
     </script>
-    
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84063531-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
   </body>
 
 </html>
+

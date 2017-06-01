@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<title>API Demo</title>
+</head>
+<body>
+<pre id="response">Fetching data from Nasa...</pre>
+<!--2aD9JzLADu2SUbDdqldQxBHjERnwDlF3gNSNHEuN-->
+
+<img id="apod_img_id" width="250px"/>
+
+<p id="copyright"></p>
+
+<h3 id="apod_title"></h3>
+
+<p id="apod_explaination"></p>
+
+
+<script src="d3.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+<script>
+// When the page has loaded, this function will be called.
+$(function () {
+
+// Initialize Firebase
+var config = {
+apiKey: "AIzaSyBkKRuCZdbPvlCUeTZj2QWXSL6X6QTROgA",
+authDomain: "nasa-api-cf1d2.firebaseapp.com",
+databaseURL: "https://nasa-a4920.firebaseio.com/",
+storageBucket: "nasa-api-cf1d2.appspot.com",
+messagingSenderId: "130573822140"
+};
+firebase.initializeApp(config);
+
+
+// Retreive an object representing our Firebase Realtime Database
+var database = firebase.database();
+
+// Get a reference to the value with the key "heading"
+var reference = database.ref("response" + (new Date().toDateString()));
+
+// jQuery's getJSON(): http://api.jquery.com/jquery.getjson/
+// GitHub API docs: https://developer.github.com/v3/repos/#list-all-public-repositories
+
+$.getJSON("https://api.nasa.gov/planetary/apod?api_key=2aD9JzLADu2SUbDdqldQxBHjERnwDlF3gNSNHEuN", function (data) {
+// When we get a response back from GitHub's API, create a string by pretty
+// printing the JSON data.
+var prettyJSON = JSON.stringify(data, null, 2);
+
+// Replace the response elements contents with the pretty printed JSON
+$("#response").text(prettyJSON);
+
+$("#copyright").text("Image Credits: " + "Public Domain");
+
+$("#apod_img_id").attr("src", data.url);
+
+$("#apod_explaination").text(data.explanation);
+
+$("#apod_title").text(data.title);
+
+reference.set(data, function () {
+console.log("Done!");
+});
+});
+});
+</script>
+</body>
+</html>
